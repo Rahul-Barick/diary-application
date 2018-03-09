@@ -1,0 +1,1 @@
+db.users.insert({"username":"rahul","password":"rahul@123"})
