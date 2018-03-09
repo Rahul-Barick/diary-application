@@ -3,7 +3,7 @@ Simple Diary Application using node.js express framework
 
 Building a RESTFUL API with NODE, pure Raw MongoDB query on  Diary Application
 
-For Listing Data I have used Jquery DataTables plugin as Server Side Rendering Tables Using Ajax Call.
+For Listing Data I have used ``Jquery DataTables plugin as Server Side Rendering Tables Using Ajax Call``
 
 Used Server side Template Engine as ``pug``
 
