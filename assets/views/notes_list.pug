@@ -1,0 +1,58 @@
+extends layout.pug
+
+block scripts
+    script(type="text/javascript").
+        var locale_data={}
+        locale_data.base_url='!{base_url}'
+    script(type="text/javascript",src=base_url+'js/notes_list.js')
+block content
+    .row
+        .col-lg-12
+            h1.page-header Notes List
+    br
+    .row
+        .col-lg-6
+        .col-lg-2
+        .col-lg-2
+        .col-lg-2
+            a.btn.btn-primary(href=base_url) Back   
+    br  
+    .row
+        .col-lg-1
+            label Title
+        .col-lg-4
+            input#title.form-control
+        .col-lg-1
+            label Description
+        .col-lg-4
+            input#description.form-control 
+    br
+    .row
+        .col-lg-1
+            label Date
+        .col-lg-2
+            .input-daterange#date_pick.input-group
+                span.input-group-addon
+                    i.fa.fa-calendar
+                input.input-sm.form-control(type='text', name='dates',id='dates')
+        .col-lg-1
+            button.btn.btn-success#search_list Search
+        .col-lg-1
+            button.btn.btn-warning#clear_list Clear
+        .col-lg-1
+            
+    br
+    br
+    br
+    .row
+        .col-lg-1
+        .col-lg-10
+            .table-responsive
+                table.table.table-bordered.table-hover#list_table
+                    thead
+                        tr
+                            th Title
+                            th Description
+                            th Date
+                    tbody
+        .col-lg-1

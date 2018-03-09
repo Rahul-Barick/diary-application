@@ -1,0 +1,25 @@
+{
+  "name": "diary-application",
+  "version": "1.0.0",
+  "description": "Simple Diary Application Using Node.js and Express JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "cluster": "^0.7.7",
+    "connect-mongo": "^2.0.1",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "fs": "0.0.1-security",
+    "http-status": "^1.0.1",
+    "nodemon": "^1.17.1",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "pug": "^2.0.0"
+  }
+}

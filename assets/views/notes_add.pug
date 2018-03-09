@@ -1,0 +1,59 @@
+extends layout.pug
+
+block scripts
+    script(type='text/javascript').
+        var locale_data={}
+        locale_data.base_url='!{base_url}'
+    script(type="text/javascript",src=base_url+'js/notes_add.js')
+
+block content
+    .row
+        .col-lg-10
+            h1.page-header  Add Notes
+        .col-lg-2
+            h4
+                a.btn.btn-primary(href=base_url) Back
+    .row
+        .col-lg-12
+            if created
+                .alert.alert-success= created
+    .row
+        .col-lg-12
+            if error_message
+                .alert.alert-danger= error_message
+    .row
+        .col-lg-3
+        .col-lg-6
+            .panel.panel-default
+                .panel-heading
+                    | Create new note 
+                .panel-body
+                    form.form-horizontal(action='/notes/add', method='POST')
+                        .row
+                            .col-lg-4
+                                .form-group
+                                    label Title:
+                                    |
+                                    input.form-control(type='text', placeholder='Enter title', name='title', value='')
+                        .row
+                            .col-lg-4
+                                .form-group
+                                label Date
+                                |
+                                .input-group.date#date
+                                    span.input-group-addon
+                                        i.fa.fa-calendar
+                                    input(name='date',type='text').form-control
+                        .row
+                            .col-lg-6
+                                .form-group
+                                    label Description:
+                                        .col-sm-10
+                                            textarea.form-control(placeholder='Description',rows='5',name='description')                                            
+                        .row
+                            .col-lg-4
+                            .col-lg-1
+                            .col-lg-3
+                                .form-group
+                                        button.btn.btn-default(type='submit') Submit
+                            .col-lg-4

@@ -1,0 +1,46 @@
+doctype html
+html(lang='en')
+
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='Diary Application')
+    meta(name='author', content='Rahul Barick')
+    title Diary
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href=base_url +'css/bootstrap-datepicker3.css')
+    link(href=base_url+'css/datatable.css', rel='stylesheet', type='text/css')
+  body
+    .container-fluid
+     block content
+      .row
+        nav.navbar.navbar-default
+          .container-fluid
+            // Brand and toggle get grouped for better mobile display
+            .navbar-header
+              button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              a.navbar-brand(href=base_url) Diary
+            // Collect the nav links, forms, and other content for toggling
+            #bs-example-navbar-collapse-1.collapse.navbar-collapse
+              ul.nav.navbar-nav
+                li
+                  a(href=base_url+'notes/add') Notes Add
+                li
+                  a(href=base_url+'notes/list') Notes List
+                li
+                  a(href=base_url +'logout') Logout
+      .row
+        .col-sm-offset-2.col-sm-8
+          h1  Diary
+          p  Read My Diary
+    script(src=base_url+'js/jquery-3.2.1.min.js', charset='utf-8')
+    script(src=base_url+'js/bootstrap.min.js', charset='utf-8')
+    script(src=base_url+'js/bootstrap-datepicker.js', charset='utf-8')
+    script(src=base_url+'js/custom.js', charset='utf-8')
+    script(src=base_url+'js/datatable.js')
+    block scripts
