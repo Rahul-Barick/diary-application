@@ -37,21 +37,20 @@ Login Route http://localhost:3000/login
 
 2. The cluster module is Node’s helper for us to implement the cloning scalability strategy, but only on one machine.
 
- 3.cluster module does is simple
+3. Cluster module does is simple
     We create a master process and that master process forks a number of worker processes and manages them. Each worker process represents an instance of the application that we want to scale. All incoming requests are handled by the master process, which is the one that decides which worker process should handle an incoming request.
 
  ![alt text](https://cdn-images-1.medium.com/max/1000/1*C7ICI8d7aAna_zTZvZ64MA.png "Cluster module")
  
- 4.The master process’s job is easy because it actually just uses a round-robin algorithm to pick a worker process.
+4. The master process’s job is easy because it actually just uses a round-robin algorithm to pick a worker process.
  
- 5.The round-robin algorithm distributes the load evenly across all available processes on a rotational basis. The first request is forwarded to the first worker process, the second to the next worker process in the list, and so on. When the end of the list is reached, the algorithm starts again from the beginning.
+5. The round-robin algorithm distributes the load evenly across all available processes on a rotational basis. The first request is forwarded to the first worker process, the second to the next worker process in the list, and so on. When the end of the list is reached, the algorithm starts again from the beginning.
  
- 6.one of the simplest and most used load balancing algorithms.
+6. One of the simplest and most used load balancing algorithms.
  
- 7. One of the simple benchmark of how many requests this server can handle per second. So we are using [Apache Benchmarking tool](https://httpd.apache.org/docs/2.4/programs/ab.html)
+7. One of the simple benchmark of how many requests this server can handle per second. So we are using [Apache Benchmarking tool](https://httpd.apache.org/docs/2.4/programs/ab.html)
  
- 8.Run the command on command line
- ``ab -c200 -t10 http://localhost:3000/`` to each api end point.This command will test-load the server with 200 concurrent connections for 10 seconds.
+8. Run the command on command line ``ab -c200 -t10 http://localhost:3000/`` to each api end point.This command will test-load the server with 200 concurrent connections for 10 seconds.
  
 ``Important : First start the node server eg:- node diary-application.js then test-load the server as developer perspective``
 
